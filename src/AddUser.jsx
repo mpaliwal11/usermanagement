@@ -40,7 +40,7 @@ class AddUser extends React.Component {
         .then(res => res.json())
         .then((result) => {
             alert(result.message)
-            if(result.status == 'Success') {
+            if(result.status === 'Success') {
                 this.handleClose()
             }
         })
@@ -64,6 +64,8 @@ class AddUser extends React.Component {
             case 'pwd':
                 fData.pwd = evt.target.value
                 break; 
+            default:
+                break;
         }
         this.setState({formData:fData});
     }
